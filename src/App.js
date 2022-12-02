@@ -1,23 +1,20 @@
 import './App.css'
-import React from 'react'
-import Counter1 from './components/Counter1'
-import Counter2 from './components/Counter2'
+import React, { useState } from 'react'
+import Counter from './components/Counter'
+import Son from './components/Son'
 
-class App extends React.PureComponent {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <Counter1 />
-        <br />
-        <Counter2 />
-      </div>
-    )
-  }
+function App() {
+  const [name, setName] = useState('张三')
+  return (
+    <div className="App">
+      <h2>案例1</h2>
+      <Counter />
+      <hr />
+      <h2>案例2</h2>
+      <Son name={name} setName={setName} />
+      <hr />
+    </div>
+  )
 }
 
 export default App

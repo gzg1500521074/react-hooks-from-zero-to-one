@@ -1,7 +1,7 @@
 import React from 'react'
 
 // 函数组件实现计数器案例
-const Counter2 = () => {
+const Counter = () => {
   const [count, setCount] = React.useState(0)
   const addcount = () => {
     setCount(count + 1)
@@ -10,8 +10,8 @@ const Counter2 = () => {
   return (
     <>
       <p>{count}</p>
-      <button onClick={addcount}>Hooks - 计数器</button>
+      <button onClick={addcount}>累加</button>
     </>
   )
 }
-export default Counter2
+export default Counter
