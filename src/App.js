@@ -1,19 +1,23 @@
 import './App.css'
-import React, { useState } from 'react'
-import Counter from './components/Counter'
+import React from 'react'
 import Son from './components/Son'
+import { AppContext } from './utils/context'
 
 function App() {
-  const [name, setName] = useState('张三')
+  const [adress, setAddress] = React.useState('北京')
   return (
-    <div className="App">
-      <h2>案例1</h2>
-      <Counter />
-      <hr />
-      <h2>案例2</h2>
-      <Son name={name} setName={setName} />
-      <hr />
-    </div>
+    <AppContext.Provider value={{ address: adress }}>
+      <div className="App">
+        <Son />
+        <button
+          onClick={() => {
+            setAddress('上海市')
+          }}
+        >
+          修改地址
+        </button>
+      </div>
+    </AppContext.Provider>
   )
 }
 
